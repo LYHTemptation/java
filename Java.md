@@ -111,4 +111,46 @@ public class ClassName{
 **메소드**
 
 * 객체 간의 데이터 전달의 수단
+
 * 외부로부터 매개값을 받을 수도 있고 실행 후 어떤 값을 리턴할 수도 있다.
+
+* 리턴값이 있을 수도 있고 없을 수도 있다.
+
+  ```java
+  void powerOn{...}
+  double divide(int x, int y){...}
+  
+  powerOn();
+  divide(10, 20);
+  ```
+
+* 매개 변수의 수를 모를 경우 `배열 타입`으로 선언할 수 있다.
+
+* 객체 내부, 외부에서 메소드 호출이 가능하다
+
+  ```java
+  public class Calculator{
+      int plus(int x,int y){
+          int result = x+y;
+          return result;
+      }
+      double avg(int x, int y){
+          double sum = plus(x,y);
+          double result = sum/2;
+          return result;
+      }
+      //내부호출
+      void execute(){
+          double result = avg(7,10);
+          println("실행결과" + result);
+      }
+      void println(String message){
+          System.out.println(message);
+      }
+  }
+  //외부호출
+  Calculator C = new Calculator();
+  C.execute();
+  ```
+
+* 
