@@ -5,39 +5,59 @@
   * 매개 변수를 달리하는 생성자를 여러 개 선언하는 것을 말한다.
 
   ```java
-  public class car{
-      String company, model, color;
-      int maxSpeed;
-      //생성자
-     Car(){
-     }
-     Car(String model){
-         this.model = model;
-     }
-     Car(String model, String color){
-         this.model = model;
-         this.color = color;
-     }
-     Car(String model, String color, int maxSpeed){
-         this.model = model;
-         this.color = color;
-         this.maxSpeed = maxSpeed;
-     }
+  public class Member {
+  	private String name, address, phone;
+  	private int age;
+  	
+  	public Member() {
+  		
+  	}
+  	
+  	public Member(String name, String address, String phone, int age) {
+  		super();
+  		setName(name);
+  		setAddress(address);
+  		setPhone(phone);
+  		setAge(age);
+  	}
+  	
+  	public String getName() {
+  		return name;
+  	}
+  	public void setName(String name) {
+  		this.name = name;
+  	}
+  	public String getAddress() {
+  		return address;
+  	}
+  	public void setAddress(String address) {
+  		this.address = address;
+  	}
+  	public String getPhone() {
+  		return phone;
+  	}
+  	public void setPhone(String phone) {
+  		this.phone = phone;
+  	}
+  	public int getAge() {
+  		return age;
+  	}
+  	public void setAge(int age) {
+  		this.age = age;
+  	}
   }
   ```
 
   ```java
   //중복 코드 제거
-  Car(String model){
-      this(model,'은색',250); //제일 마지막 생성자 호출
-  }
-  Car(String model, String color){
-      this(model,color,250); //제일 마지막 생성자 호출
-  }
-  Car(String model, String color, int maxSpeed){
-      this.model = model;
-      this.color = color;
-      this.maxSpeed = maxSpeed;
+  public class Test {
+  
+  	public static void main(String[] args) {
+  		Member m1 = new Member("이윤호","성남","010-1111-2222",26);
+  		Member m2 = new Member("이윤호","성남","010-4444-3333",26);
+  		Member m3 = new Member();	
+  	}
+  
   }
   ```
 
